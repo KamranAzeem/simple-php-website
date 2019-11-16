@@ -1,0 +1,35 @@
+version: "2"
+services:
+  example:
+    # Either, use an existing image:
+    # image: php:7-apache
+
+    # Or, let docker-compose build an image:
+    build: .
+
+    labels:
+      - traefik.enable=true
+      - traefik.port=80
+      - traefik.frontend.rule=Host:example.wbitt.com
+
+    env_file:
+      - website.env
+
+    # cpu_percent: 5
+    mem_limit: 50000000
+    mem_reservation: 10m
+
+    #################################################################################################
+    #
+    # Below - developers don't need to modify the network definition, unless asked by the sysadmin.
+    #
+    ##################################################################################################
+
+    networks:
+      # This 'uses' the proxy-net / services-network
+      - services-network
+
+networks:
+  services-network:
+    external: true
+
