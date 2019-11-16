@@ -11,8 +11,8 @@ I can:
 * set this repo/directory as mounted volume inside a dockerized web server, either through `docker run` or `docker-compose`
 * show how you can use environment variables loaded from a certain ENV file, which can be used inside your PHP scripts/programs
 
-**Note:** The files are under `website/` directory.
-**Note:** The `docker-compose.yml` file contains few traefik/reverse-proxy related lines of configuration, which the developers of different applications can adjust to suit their needs.
+**Note:** The files are under the directory named `website/` .
+
 
 # Example of using environment variables inside PHP scripts:
 The environment variables should be in the file called `website.env` , with each VARIABLE=VALUE pair on a separate line. The VALUE of any VARIBALE **must not** be enclosed in single of double quotes. Here is an example:
@@ -26,6 +26,8 @@ DB_USER=user_test
 DB_PASSWORD=Some-Secret-Password
 ```
 **Note:** The file `website.env` is (should be) **git-ignored** , so you don't accidentally expose your secrets through your code. Actually all `*.env` files are git-ignored in this repository.
+
+**Note:** The `docker-compose.yml` file contains few traefik/reverse-proxy related lines of configuration, which the developers of different applications can adjust to suit their needs.
 
 # Successful run:
 ![simple-php-website.png](simple-php-website.png)
