@@ -11,7 +11,7 @@ I can:
 * set this repo/directory as mounted volume inside a dockerized web server, either through `docker run` or `docker-compose`
 * show how you can use environment variables loaded from a certain ENV file, which can be used inside your PHP scripts/programs
 
-**Note:** The files are under the directory named `website/` .
+**Note:** The files are under the directory named `htdocs/` .
 
 
 # Example of using environment variables inside PHP scripts:
